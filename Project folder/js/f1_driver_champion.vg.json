@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart",
+  "width": 620,
+  "height": 400,
+  "background": "#413e3e",
+  "config": {
+    "title": {
+      "color": "#ffffff"
+    },
+    "legend": {
+      "titleColor": "#ffffff",
+      "labelColor": "#ffffff",
+      "labelFont": "Source Sans Pro"
+    },
+    "axis": {
+      "titleColor": "#ffffff",
+      "labelColor": "#ffffff"
+    }
+  },
+  "data": {
+    "url": "../../Dataset/driver_standings_per_race.csv"
+  },
+  "params": [
+    {
+      "name": "year_selection",
+      "bind": {
+        "input": "range",
+        "min": 1960,
+        "max": 2020,
+        "step": 1,
+        "name": "Year selection: "
+      },
+      "value": 1960
+    }
+  ],
+  "mark": { "type": "line", "point": true },
+  "encoding": {
+    "x": { "field": "name", "type": "nominal" },
+    "y": {
+      "field": "position",
+      "type": "quantitative",
+      "axis": {
+        "grid": false
+      }
+    },
+    "order": { "field": "name", "type": "nominal" },
+    "tooltip": [
+      { "field": "driverId", "type": "ordinal", "title": "DriverId" },
+      { "field": "position", "type": "ordinal", "title": "Position" },
+      { "field": "driver_name", "type": "nominal", "title": "Driver" }
+    ],
+    "color": {
+      "field": "driver_name",
+      "type": "nominal",
+      "scale": {
+        "scheme": "tableau20"
+      },
+      "title": "Driver"
+    }
+  },
+  "transform": [{ "filter": "datum.year == year_selection" }]
+}

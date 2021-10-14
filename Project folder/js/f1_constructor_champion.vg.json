@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart",
+  "width": 620,
+  "height": 400,
+  "background": "#413e3e",
+  "config": {
+    "title": {
+      "color": "#ffffff"
+    },
+    "legend": {
+      "titleColor": "#ffffff",
+      "labelColor": "#ffffff",
+      "labelFont": "Source Sans Pro"
+    },
+    "axis": {
+      "titleColor": "#ffffff",
+      "labelColor": "#ffffff"
+    }
+  },
+  "data": {
+    "url": "../../Dataset/constructor_standings.csv"
+  },
+  "params": [
+    {
+      "name": "year_selection",
+      "bind": {
+        "input": "range",
+        "min": 1960,
+        "max": 2020,
+        "step": 1,
+        "name": "Year selection: "
+      },
+      "value": 1960
+    }
+  ],
+  "mark": { "type": "line", "point": true },
+  "encoding": {
+    "x": {
+      "field": "circuitname",
+      "type": "nominal",
+      "sort": {
+        "field": "raceId",
+        "order": "ascending"
+      }
+    },
+    "y": {
+      "field": "position",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "constructorId",
+        "type": "ordinal",
+        "title": "Constructor Id"
+      },
+      { "field": "position", "type": "ordinal", "title": "Position" },
+      { "field": "name", "type": "ordinal", "title": "Constructor Name" },
+      { "field": "circuitname", "type": "ordinal", "title": "Circuit Name" },
+      { "field": "points", "type": "nominal", "title": "Points" },
+      { "field": "round", "type": "nominal", "title": "Round" }
+    ],
+    "color": {
+      "field": "name",
+      "type": "nominal",
+      "scale": {
+        "scheme": "tableau20"
+      },
+      "title": "Constructor"
+    }
+  },
+  "transform": [{ "filter": "datum.year == year_selection" }]
+}

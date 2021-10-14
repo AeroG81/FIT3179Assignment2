@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 2</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <script src="js/vega_lite_vis.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Source+Sans+Pro&display=swap"
+    rel="stylesheet"> <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+</head>
+
+<body>
+  <div class="center-container">
+    <div class="grid">
+      <div class="title">
+        <h1> FORMULA 1
+          <span class="vertical-line title-line-vertical"></span>
+          <span class="horizontal-line title-line-horizontal"></span>
+        </h1>
+        <p class="subtitle">
+          <b style="font-size: 1.5rem;">Formula One</b> (also known as <b>Formula 1</b> or <b>F1</b>) is the highest
+          class of international auto racing for
+          single-seater formula racing car sanctioned by <i>Fédération Internationale de l'Automobile (FIA)</i>.
+          The World Drivers' Championship, which became the FIA Formula One World Championship in 1981,
+          has been one of the premier forms of racing around the world since its inaugural season in 1950.
+        </p>
+      </div>
+      <div class="map">
+        <h2 class="map-title">
+          F1 Circuits around the globe
+          <span class="horizontal-line map-line-horizontal"></span>
+        </h2>
+        <div id="F1map"></div>
+      </div>
+
+      <div class="text1">
+        <h2 class="text1-title">
+          F1 Constructor of Each Nation
+          <span class="horizontal-line text1-line-horizontal"></span>
+        </h2>
+        <div class="text1-content">
+          British has the most of constructor team participate in Formula 1, which is 86 teams.
+        </div>
+      </div>
+      <div class="chart1">
+
+        <div id="F1constructor"></div>
+      </div>
+
+      <div class="chart2">
+        <div id="F1constructorchampion"></div>
+      </div>
+      <div class="text2">
+        <h2 class="text2-title">
+          F1 Constructor Ranking For Each Race
+          <span class="horizontal-line text2-line-horizontal"></span>
+        </h2>F1 Constructor Champion
+      </div>
+
+
+      <div class="text3">
+        <h2 class="text1-title">
+          F1 Driver of Each Nation
+          <span class="horizontal-line text1-line-horizontal"></span>
+        </h2>
+      </div>
+      <div class="chart3">
+        <div id="F1driver"></div>
+      </div>
+
+      <div class="text4">F1 Top 10 Driver per Race</div>
+      <div class="chart4">
+        <div id="F1driverchampion"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+
+  </footer>
+</body>
+
+</html>

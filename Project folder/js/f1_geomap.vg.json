@@ -1,0 +1,133 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1320,
+  "height": 500,
+  "config": {
+    "title": {
+      "color": "#ffffff"
+    },
+    "legend": {
+      "titleColor": "#ffffff",
+      "labelColor": "#ffffff",
+      "labelFont": "Source Sans Pro"
+    },
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    }
+  },
+  "background": "#413e3e",
+  "projection": {
+    "type": "equalEarth"
+  },
+  "params": [
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "America", "Europe", "Africa", "Asia", "Oceania"],
+        "labels": [
+          "Show All",
+          "America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "name": "map",
+      "data": {
+        "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "params": [
+        {
+          "name": "highlight",
+          "select": {"type": "point", "on": "mouseover"}
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#6b6a6a",
+        "stroke": "#a7a5a5"
+      },
+      "encoding": {
+        "strokeWidth": {
+          "condition": [
+            {
+              "param": "highlight",
+              "empty": false,
+              "value": 3
+            }
+          ],
+          "value": 0.5
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "../../Dataset/circuits.csv"
+      },
+      "name": "point",
+      "mark": {
+        "type": "circle",
+        "stroke": "#ffffff"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lng",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "value": 30
+        },
+        "color": {
+          "field": "continent",
+          "type": "nominal",
+          "scale": {
+            "range": ["#9b5de5","#f15bb5","#fee440","#00bbf9","#00f5d4"]
+          },
+          "title": "Continent"
+        },
+        "strokeWidth":{
+          "value": 1
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "type": "nominal",
+            "title": "Circuit name"
+          },
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "location",
+            "type": "nominal",
+            "title": "Location"
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "Continent_selection == null || datum.continent == Continent_selection"
+        }
+      ]
+    }
+  ]
+}

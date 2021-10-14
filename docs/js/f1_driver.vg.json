@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": { "url": "../../Dataset/drivers.csv" },
+  "data": { "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/drivers.csv" },
   "background": "#413e3e",
   "config": {
     "title": {
@@ -13,7 +13,10 @@
     },
     "axis": {
       "titleColor": "#ffffff",
-      "labelColor": "#ffffff"
+      "labelColor": "#ffffff",
+      "gridColor": "#7a7a7a",
+      "labelFontSize": 12,
+      "labelAngle":45
     },
     "style": {
       "cell": {
@@ -24,7 +27,7 @@
   "vconcat": [
     {
       "width": 620,
-      "height": 300,
+      "height": 200,
       "encoding": {
         "x": {
           "field": "nationality",
@@ -57,7 +60,12 @@
                 "on": "click"
               }
             }
-          ]
+          ],
+          "encoding": {
+            "color":{
+              "value": "#e44242"
+            }
+          }
         },
         {
           "mark": {
@@ -75,10 +83,10 @@
     },
     {
       "width":  620,
-      "height": 250,
+      "height": 300,
       "transform": [
-        { "calculate": "ceil (datum.driverId/10)", "as": "col" },
-        { "calculate": "datum.driverId - datum.col*10", "as": "row" }
+        { "calculate": "ceil (datum.driverId/20)", "as": "col" },
+        { "calculate": "datum.driverId - datum.col*20", "as": "row" }
       ],
       "mark": { "type": "point", "filled": true },
       "encoding": {
@@ -86,7 +94,8 @@
         "y": { "field": "row", "type": "ordinal", "axis": null },
         "tooltip": [
           { "field": "nationality", "type": "nominal", "title": "Nationality" },
-          { "field": "driverRef", "type": "nominal", "title": "Driver name" },
+          { "field": "forename", "type": "nominal", "title": "Forename" },
+          { "field": "surname", "type": "nominal", "title": "Surname" },
           { "field": "driverId", "type": "nominal", "title": "Driver ID" }
         ],
         "shape": {
@@ -96,7 +105,7 @@
           "condition": { "param": "nation", "value": "rgb(194,81,64)" },
           "value": "rgb(167,165,156)"
         },
-        "size": { "value": 20 }
+        "size": { "value": 25 }
       }
     }
   ]

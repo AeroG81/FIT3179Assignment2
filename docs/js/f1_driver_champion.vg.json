@@ -15,11 +15,12 @@
     },
     "axis": {
       "titleColor": "#ffffff",
-      "labelColor": "#ffffff"
+      "labelColor": "#ffffff",
+      "gridColor": "#7a7a7a"
     }
   },
   "data": {
-    "url": "../../Dataset/driver_standings_per_race.csv"
+    "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/driver_standings_per_race.csv"
   },
   "params": [
     {

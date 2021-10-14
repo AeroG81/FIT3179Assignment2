@@ -84,7 +84,6 @@ body {
     font-size: 1.3rem;
     width: 900px;
     bottom: -90px;
-    left: 20px;
     color: #dadada;
 }
 
@@ -112,7 +111,7 @@ body {
 .map-line-horizontal {
     position: absolute;
     min-height: 2px;
-    min-width: 600px;
+    min-width: 450px;
     background-color: #ffffff;
     border: #ffffff;
     left: 0;
@@ -126,7 +125,6 @@ body {
 }
 
 .text1-title {
-    font-family: 'Lora', serif;
     position: relative;
     display: block;
     text-align: left;
@@ -135,49 +133,129 @@ body {
 .text1-line-horizontal {
     position: absolute;
     min-height: 2px;
-    min-width: 600px;
+    min-width: 480px;
     background-color: #ffffff;
     border: #ffffff;
     left: 0;
-    top: 35px; 
+    top: 45px; 
 }
 
 .text1-content {
     position: absolute;
     top: 80px;
-    right: 10px;
+    left: 1px;
     width: 700px;
     font-size: 1.3rem;
+    line-height: 2rem;
 }
 
 .chart1 {
     grid-area: chart1;
-    justify-items: right;
-    position: relative;
+    padding-top: 70px;
 }
 
 .text2 {
     grid-area: text2;
+    position: relative;
+}
+
+.text2-title {
+    position: relative;
+    display: block;
+    text-align: right;
+}
+
+.text2-line-horizontal {
+    position: absolute;
+    min-height: 2px;
+    min-width: 640px;
+    background-color: #ffffff;
+    border: #ffffff;
+    right: 0;
+    top: 45px; 
+}
+
+.text2-content {
+    position: absolute;
+    top: 80px;
+    left: 1px;
+    width: 700px;
+    font-size: 1.3rem;
+    text-align: right;
 }
 
 .chart2 {
     grid-area: chart2;
+    padding-top: 70px;
 }
 
 .text3 {
     grid-area: text3;
+    position: relative;
+}
+
+.text3-title {
+    position: relative;
+    display: block;
+    text-align: left;
+}
+
+.text3-line-horizontal {
+    position: absolute;
+    min-height: 2px;
+    min-width: 390px;
+    background-color: #ffffff;
+    border: #ffffff;
+    left: 0;
+    top: 45px; 
+}
+
+.text3-content {
+    position: absolute;
+    top: 80px;
+    left: 1px;
+    width: 700px;
+    font-size: 1.3rem;
 }
 
 .chart3 {
     grid-area: chart3;
+    padding-top: 70px;
 }
 
 .text4 {
     grid-area: text4;
+    position: relative;
+}
+
+.text4-title {
+    position: relative;
+    display: block;
+    text-align: right;
+}
+
+.text4-line-horizontal {
+    position: absolute;
+    min-height: 2px;
+    min-width: 530px;
+    background-color: #ffffff;
+    border: #ffffff;
+    right: 0;
+    top: 45px; 
+}
+
+.text4-content {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 700px;
+    font-size: 1.3rem;
+    text-align: right;
 }
 
 .chart4 {
     grid-area: chart4;
+    padding-top: 70px;
 }
 
 footer {

@@ -15,11 +15,12 @@
     },
     "axis": {
       "titleColor": "#ffffff",
-      "labelColor": "#ffffff"
+      "labelColor": "#ffffff",
+      "gridColor": "#7a7a7a"
     }
   },
   "data": {
-    "url": "../../Dataset/constructor_standings.csv"
+    "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/constructor_standings.csv"
   },
   "params": [
     {
@@ -40,7 +41,7 @@
       "field": "circuitname",
       "type": "nominal",
       "sort": {
-        "field": "raceId",
+        "field": "round",
         "order": "ascending"
       }
     },

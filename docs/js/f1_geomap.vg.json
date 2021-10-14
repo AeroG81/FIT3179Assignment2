@@ -75,7 +75,7 @@
     },
     {
       "data": {
-        "url": "../../Dataset/circuits.csv"
+        "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/circuits.csv"
       },
       "name": "point",
       "mark": {

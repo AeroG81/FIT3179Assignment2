@@ -14,7 +14,9 @@
     "axis": {
       "titleColor": "#ffffff",
       "labelColor": "#ffffff",
-      "gridColor": "#7a7a7a"
+      "gridColor": "#7a7a7a",
+      "labelFontSize": 12,
+      "labelAngle":45
     },
     "style": {
       "cell": {

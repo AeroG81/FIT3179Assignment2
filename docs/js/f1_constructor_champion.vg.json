@@ -16,7 +16,7 @@
     "axis": {
       "titleColor": "#ffffff",
       "labelColor": "#ffffff",
-      "gridColor": "#7a7a7a"
+      "gridColor": "#525252"
     }
   },
   "data": {
@@ -35,19 +35,39 @@
       "value": 1960
     }
   ],
-  "mark": { "type": "line", "point": true },
+  "mark": {
+    "type": "line",
+    "point": {
+      "size": 100,
+      "filled": true
+    }
+  },
   "encoding": {
     "x": {
-      "field": "circuitname",
-      "type": "nominal",
-      "sort": {
-        "field": "round",
-        "order": "ascending"
+      "field": "round",
+      "type": "quantitative",
+      "axis": {
+        "tickCount":20,
+        "tickMinStep": 1
+      },
+      "scale": {
+        "round": true,
+        "nice": true,
+        "domainMin": 1
       }
     },
     "y": {
       "field": "position",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "round": true,
+        "nice": true,
+        "domainMin": 1
+      },
+      "axis": {
+        "tickCount":15,
+        "tickMinStep": 1
+      }
     },
     "tooltip": [
       {
@@ -59,7 +79,8 @@
       { "field": "name", "type": "ordinal", "title": "Constructor Name" },
       { "field": "circuitname", "type": "ordinal", "title": "Circuit Name" },
       { "field": "points", "type": "nominal", "title": "Points" },
-      { "field": "round", "type": "nominal", "title": "Round" }
+      { "field": "round", "type": "nominal", "title": "Round" },
+      { "field": "date", "type": "nominal", "title": "Date" }
     ],
     "color": {
       "field": "name",

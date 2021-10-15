@@ -116,7 +116,8 @@
         "tooltip": [
           { "field": "nationality", "type": "nominal", "title": "Nationality" },
           { "field": "name", "type": "nominal", "title": "Constructor name" },
-          { "field": "constructorRef", "type": "nominal", "title": "Constructor Ref" }
+          { "field": "constructorRef", "type": "nominal", "title": "Constructor Ref" },
+          { "field": "constructorId", "type": "nominal", "title": "Constructor ID" }
         ],
         "shape": {
           "value": "M1.7 -1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"

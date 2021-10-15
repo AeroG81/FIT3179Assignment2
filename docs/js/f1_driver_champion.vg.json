@@ -38,28 +38,55 @@
         "name": "Year selection: "
       },
       "value": 1960
+    },
+    {
+      "name": "highlight",
+      "select": {
+        "type": "point",
+        "fields": ["driverId"],
+        "on": "mouseover"
+      }
     }
   ],
-  "mark": { "type": "line", "point": true },
+  "mark": {
+    "type": "line",
+    "point": {
+      "size": 100,
+      "filled": true
+    }
+  },
   "encoding": {
-    "x": { "field": "name", "type": "nominal" },
-    "y": {
-      "field": "position",
+    "x": {
+      "field": "round",
       "type": "quantitative",
       "axis": {
-        "grid": false
-      },      
+        "tickCount": 20,
+        "tickMinStep": 1
+      },
       "scale": {
         "round": true,
         "nice": true,
         "domainMin": 1
       }
     },
-    "order": { "field": "name", "type": "nominal" },
+    "y": {
+      "field": "position",
+      "type": "quantitative",
+      "axis": {
+        "grid": false,
+        "tickCount": 15,
+        "tickMinStep": 1
+      },
+      "scale": {
+        "round": true,
+        "nice": true,
+        "domainMin": 1
+      }
+    },
     "tooltip": [
+      { "field": "driver_name", "type": "nominal", "title": "Driver" },
       { "field": "driverId", "type": "ordinal", "title": "DriverId" },
-      { "field": "position", "type": "ordinal", "title": "Position" },
-      { "field": "driver_name", "type": "nominal", "title": "Driver" }
+      { "field": "name", "type": "nominal", "title": "Circuit" }
     ],
     "color": {
       "field": "driver_name",
@@ -68,6 +95,15 @@
         "scheme": "tableau20"
       },
       "title": "Driver"
+    },
+    "opacity": {
+      "condition": [
+        {
+          "param": "highlight",
+          "value": 1
+        }
+      ],
+      "value": 0.2
     }
   },
   "transform": [{ "filter": "datum.year == year_selection" }]

@@ -18,6 +18,34 @@ body {
     background-color: #413e3e;
 }
 
+.teal {
+    color: #35e2b7;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.grey {
+    color: #c7c7c7;
+}
+
+.orange {
+    color: #f5a850;
+}
+
+.lightblue {
+    color: #6db2eb;
+}
+
+.lightgreen {
+    color: #14956a;
+}
+
+.blue {
+    color: #3167fb;
+}
+
 .center-container {
     display: flex;
     justify-content: center;
@@ -144,7 +172,7 @@ body {
     position: absolute;
     top: 80px;
     left: 1px;
-    width: 700px;
+    width: 680px;
     font-size: 1.3rem;
     line-height: 2rem;
 }

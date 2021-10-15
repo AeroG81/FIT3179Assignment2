@@ -33,6 +33,14 @@
         "name": "Year selection: "
       },
       "value": 1960
+    },
+    {
+      "name": "highlight",
+      "select": {
+        "type": "point",
+        "fields": ["constructorId"],
+        "on": "mouseover"
+      }
     }
   ],
   "mark": {
@@ -47,7 +55,7 @@
       "field": "round",
       "type": "quantitative",
       "axis": {
-        "tickCount":20,
+        "tickCount": 20,
         "tickMinStep": 1
       },
       "scale": {
@@ -65,7 +73,7 @@
         "domainMin": 1
       },
       "axis": {
-        "tickCount":15,
+        "tickCount": 15,
         "tickMinStep": 1
       }
     },
@@ -89,6 +97,15 @@
         "scheme": "tableau20"
       },
       "title": "Constructor"
+    },
+    "opacity": {
+      "condition": [
+        {
+          "param": "highlight",
+          "value": 1
+        }
+      ],
+      "value": 0.2
     }
   },
   "transform": [{ "filter": "datum.year == year_selection" }]

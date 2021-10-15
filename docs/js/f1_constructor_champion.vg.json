@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart",
-  "width": 620,
+  "width": 544,
   "height": 400,
   "background": "#413e3e",
   "config": {
@@ -108,5 +108,7 @@
       "value": 0.2
     }
   },
-  "transform": [{ "filter": "datum.year == year_selection" }]
+  "transform": [
+    { "filter": "datum.year == year_selection" }
+  ]
 }

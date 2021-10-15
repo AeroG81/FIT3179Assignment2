@@ -16,7 +16,7 @@
       "labelColor": "#ffffff",
       "gridColor": "#7a7a7a",
       "labelFontSize": 12,
-      "labelAngle":45
+      "labelAngle": -45
     },
     "style": {
       "cell": {
@@ -26,7 +26,7 @@
   },
   "vconcat": [
     {
-      "width": 620,
+      "width": 700,
       "height": 200,
       "encoding": {
         "x": {
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "width":  620,
+      "width":  700,
       "height": 300,
       "transform": [
         { "calculate": "ceil (datum.driverId/20)", "as": "col" },

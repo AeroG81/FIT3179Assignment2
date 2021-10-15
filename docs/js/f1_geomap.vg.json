@@ -82,6 +82,11 @@
         "type": "circle",
         "stroke": "#ffffff"
       },
+      "transform": [
+        {
+          "filter": "Continent_selection == null || datum.continent == Continent_selection"
+        }
+      ],
       "encoding": {
         "longitude": {
           "field": "lng",
@@ -122,12 +127,8 @@
             "title": "Location"
           }
         ]
-      },
-      "transform": [
-        {
-          "filter": "Continent_selection == null || datum.continent == Continent_selection"
-        }
-      ]
+      }
+      
     }
   ]
 }

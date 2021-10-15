@@ -15,8 +15,11 @@
       "titleColor": "#ffffff",
       "labelColor": "#ffffff",
       "gridColor": "#7a7a7a",
-      "labelFontSize": 12,
-      "labelAngle":45
+      "labelFontSize": 13,
+      "labelAngle": -45
+    },
+    "scale": {
+      "pointPadding": 0
     },
     "style": {
       "cell": {
@@ -26,7 +29,7 @@
   },
   "vconcat": [
     {
-      "width": 620,
+      "width": 700,
       "height": 200,
       "encoding": {
         "x": { "field": "nationality", "sort": "-y", "title": "Nationality" },
@@ -51,6 +54,14 @@
                 "fields": ["nationality"],
                 "on": "click"
               }
+            },
+            {
+              "name": "nation_hover",
+              "select": {
+                "type": "point",
+                "fields": ["nationality"],
+                "on": "mouseover"
+              }
             }
           ],
           "encoding": {
@@ -74,13 +85,13 @@
       ]
     },
     {
-      "width":  620,
+      "width":  680,
       "height": 250,
       "transform": [
         { "calculate": "ceil (datum.constructorId/10)", "as": "col" },
         { "calculate": "datum.constructorId - datum.col*10", "as": "row" }
       ],
-      "mark": { "type": "point", "filled": true },
+      "mark": { "type": "point", "filled": true }, 
       "encoding": {
         "x": { "field": "col", "type": "ordinal", "axis": null },
         "y": { "field": "row", "type": "ordinal", "axis": null },
@@ -90,13 +101,21 @@
           { "field": "constructorId", "type": "nominal", "title": "Constructor ID" }
         ],
         "shape": {
-          "value": "M1.7 -1.7h-0.8c0.3 -0.2 0.6 -0.5 0.6 -0.9c0 -0.6 -0.4 -1 -1 -1c-0.6 0 -1 0.4 -1 1c0 0.4 0.2 0.7 0.6 0.9h-0.8c-0.4 0 -0.7 0.3 -0.7 0.6v1.9c0 0.3 0.3 0.6 0.6 0.6h0.2c0 0 0 0.1 0 0.1v1.9c0 0.3 0.2 0.6 0.3 0.6h1.3c0.2 0 0.3 -0.3 0.3 -0.6v-1.8c0 0 0 -0.1 0 -0.1h0.2c0.3 0 0.6 -0.3 0.6 -0.6v-2c0.2 -0.3 -0.1 -0.6 -0.4 -0.6z"
+          "value": "M1.7 -1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"
         },
         "color": {
           "condition": { "param": "nation", "value": "#e44242" },
           "value": "rgb(167,165,156)"
         },
-        "size": { "value": 40 }
+        "opacity":{
+          "condition": [{
+            "param": "nation_hover", 
+            "value": 1
+          }
+        ],
+          "value": 0.3
+        },
+        "size": { "value": 170 }
       }
     }
   ]

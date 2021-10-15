@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": { "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/drivers.csv" },
+  "data": {
+    "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/drivers.csv"
+  },
   "background": "#413e3e",
   "config": {
     "title": {
@@ -59,11 +61,27 @@
                 "fields": ["nationality"],
                 "on": "click"
               }
+            },
+            {
+              "name": "highlight",
+              "select": {
+                "type": "point",
+                "fields": ["nationality"],
+                "on": "mouseover"
+              }
             }
           ],
           "encoding": {
-            "color":{
+            "color": {
               "value": "#e44242"
+            },
+            "opacity":{
+              "condition": [{
+                "param": "driver_hover", 
+                "value": 1
+              }
+            ],
+              "value": 0.3
             }
           }
         },
@@ -82,13 +100,23 @@
       ]
     },
     {
-      "width":  700,
-      "height": 300,
+      "width": 700,
+      "height": 400,
       "transform": [
-        { "calculate": "ceil (datum.driverId/20)", "as": "col" },
-        { "calculate": "datum.driverId - datum.col*20", "as": "row" }
+        { "calculate": "ceil (datum.count/20)", "as": "col" },
+        { "calculate": "datum.count - datum.col*20", "as": "row" }
       ],
       "mark": { "type": "point", "filled": true },
+      "params": [
+        {
+          "name": "driver_hover",
+          "select": {
+            "type": "point",
+            "fields": ["nationality"],
+            "on": "mouseover"
+          }
+        }
+      ],
       "encoding": {
         "x": { "field": "col", "type": "ordinal", "axis": null },
         "y": { "field": "row", "type": "ordinal", "axis": null },
@@ -104,6 +132,15 @@
         "color": {
           "condition": { "param": "nation", "value": "rgb(194,81,64)" },
           "value": "rgb(167,165,156)"
+        },
+        "opacity": {
+          "condition": [
+            {
+              "param": "highlight",
+              "value": 1
+            }
+          ],
+          "value": 0.2
         },
         "size": { "value": 25 }
       }

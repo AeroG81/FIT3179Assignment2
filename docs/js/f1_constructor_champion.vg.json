@@ -41,12 +41,17 @@
         "fields": ["constructorId"],
         "on": "mouseover"
       }
+    },
+    {
+      "name": "constructor_legend",
+      "select": { "type":"point", "fields": ["name"]},
+      "bind": "legend"
     }
   ],
   "mark": {
     "type": "line",
     "point": {
-      "size": 100,
+      "size": 150,
       "filled": true
     }
   },
@@ -62,7 +67,8 @@
         "round": true,
         "nice": true,
         "domainMin": 1
-      }
+      },
+      "title": "Round"
     },
     "y": {
       "field": "position",
@@ -75,14 +81,11 @@
       "axis": {
         "tickCount": 15,
         "tickMinStep": 1
-      }
+      },
+      "title": "Position"
     },
     "tooltip": [
-      {
-        "field": "constructorId",
-        "type": "ordinal",
-        "title": "Constructor Id"
-      },
+      { "field": "constructorId", "type": "ordinal", "title": "Constructor Id" },
       { "field": "position", "type": "ordinal", "title": "Position" },
       { "field": "name", "type": "ordinal", "title": "Constructor Name" },
       { "field": "circuitname", "type": "ordinal", "title": "Circuit Name" },
@@ -99,16 +102,19 @@
       "title": "Constructor"
     },
     "opacity": {
-      "condition": [
-        {
-          "param": "highlight",
-          "value": 1
-        }
-      ],
+      "condition": {
+        "param": "constructor_legend",
+        "value": 1
+      },
       "value": 0.2
+    },
+    "strokeWidth":{
+      "condition": {
+        "param": "highlight",
+        "value": 3
+      },
+      "value": 0
     }
   },
-  "transform": [
-    { "filter": "datum.year == year_selection" }
-  ]
+  "transform": [{ "filter": "datum.year == year_selection" }]
 }

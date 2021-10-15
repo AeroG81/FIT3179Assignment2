@@ -37,6 +37,7 @@
         ],
         "name": "Continent Selection: "
       }
+      
     }
   ],
   "layer": [
@@ -87,6 +88,13 @@
           "filter": "Continent_selection == null || datum.continent == Continent_selection"
         }
       ],
+      "params": [
+        {
+          "name": "continent_select",
+          "select": { "type":"point", "fields": ["continent"]},
+          "bind": "legend"
+        }
+      ],
       "encoding": {
         "longitude": {
           "field": "lng",
@@ -109,6 +117,15 @@
         },
         "strokeWidth":{
           "value": 1
+        },
+        "opacity": {
+          "condition": [
+            {
+              "param": "continent_select",
+              "value": 1
+            }
+          ],
+          "value": 0.1
         },
         "tooltip": [
           {

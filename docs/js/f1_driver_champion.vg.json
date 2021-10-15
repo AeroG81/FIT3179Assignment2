@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart",
-  "width": 620,
+  "width": 544,
   "height": 400,
   "background": "#413e3e",
   "config": {
@@ -46,12 +46,17 @@
         "fields": ["driverId"],
         "on": "mouseover"
       }
+    },
+    {
+      "name": "driver_legend",
+      "select": { "type":"point", "fields": ["driver_name"]},
+      "bind": "legend"
     }
   ],
   "mark": {
     "type": "line",
     "point": {
-      "size": 100,
+      "size": 150,
       "filled": true
     }
   },
@@ -67,7 +72,8 @@
         "round": true,
         "nice": true,
         "domainMin": 1
-      }
+      },
+      "title": "Round"
     },
     "y": {
       "field": "position",
@@ -81,7 +87,8 @@
         "round": true,
         "nice": true,
         "domainMin": 1
-      }
+      },
+      "title": "Position"
     },
     "tooltip": [
       { "field": "driver_name", "type": "nominal", "title": "Driver" },
@@ -99,11 +106,18 @@
     "opacity": {
       "condition": [
         {
-          "param": "highlight",
+          "param": "driver_legend",
           "value": 1
         }
       ],
       "value": 0.2
+    },
+    "strokeWidth":{
+      "condition": {
+        "param": "highlight",
+        "value": 3
+      },
+      "value": 0
     }
   },
   "transform": [{ "filter": "datum.year == year_selection" }]

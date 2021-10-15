@@ -8,7 +8,7 @@ h1 {
 
 h2 {
     font-family: 'Lora', serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 body {
@@ -153,8 +153,8 @@ body {
     top: 80px;
     left: 1px;
     width: 680px;
-    font-size: 1.3rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 .chart1 {
@@ -178,9 +178,9 @@ body {
     top: 90px;
     right: 0;
     width: 600px;
-    font-size: 1.3rem;
     text-align: left;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 .chart2 {
@@ -204,8 +204,8 @@ body {
     top: 80px;
     left: 1px;
     width: 700px;
-    font-size: 1.3rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 .chart3 {
@@ -228,10 +228,10 @@ body {
     position: absolute;
     top: 90px;
     right: 0;
-    width: 550px;
-    font-size: 1.3rem;
-    text-align: left;
-    line-height: 2rem;
+    width: 650px;
+    text-align: right;
+    font-size: 2rem;
+    line-height: 2.5rem;
 }
 
 .chart4 {

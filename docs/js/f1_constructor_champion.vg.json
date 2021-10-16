@@ -41,17 +41,12 @@
         "fields": ["constructorId"],
         "on": "mouseover"
       }
-    },
-    {
-      "name": "constructor_legend",
-      "select": { "type":"point", "fields": ["name"]},
-      "bind": "legend"
     }
   ],
   "mark": {
     "type": "line",
     "point": {
-      "size": 150,
+      "size": 200,
       "filled": true
     }
   },
@@ -89,8 +84,6 @@
       { "field": "position", "type": "ordinal", "title": "Position" },
       { "field": "name", "type": "ordinal", "title": "Constructor Name" },
       { "field": "circuitname", "type": "ordinal", "title": "Circuit Name" },
-      { "field": "points", "type": "nominal", "title": "Points" },
-      { "field": "round", "type": "nominal", "title": "Round" },
       { "field": "date", "type": "nominal", "title": "Date" }
     ],
     "color": {
@@ -103,10 +96,10 @@
     },
     "opacity": {
       "condition": {
-        "param": "constructor_legend",
+        "param": "highlight",
         "value": 1
       },
-      "value": 0.2
+      "value": 0.15
     },
     "strokeWidth":{
       "condition": {

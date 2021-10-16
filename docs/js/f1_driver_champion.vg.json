@@ -25,7 +25,7 @@
     }
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/driver_standings_per_race.csv"
+    "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/results.csv"
   },
   "params": [
     {
@@ -48,15 +48,14 @@
       }
     },
     {
-      "name": "driver_legend",
-      "select": { "type":"point", "fields": ["driver_name"]},
-      "bind": "legend"
+      "name": "driver_select",
+      "select": { "type": "point", "fields": ["driverId"], "on": "click" }
     }
   ],
   "mark": {
     "type": "line",
     "point": {
-      "size": 150,
+      "size": 200,
       "filled": true
     }
   },
@@ -76,7 +75,7 @@
       "title": "Round"
     },
     "y": {
-      "field": "position",
+      "field": "positionOrder",
       "type": "quantitative",
       "axis": {
         "grid": false,
@@ -91,12 +90,14 @@
       "title": "Position"
     },
     "tooltip": [
-      { "field": "driver_name", "type": "nominal", "title": "Driver" },
-      { "field": "driverId", "type": "ordinal", "title": "DriverId" },
-      { "field": "name", "type": "nominal", "title": "Circuit" }
+      { "field": "forename", "type": "nominal", "title": "Forename" },
+      { "field": "surname", "type": "nominal", "title": "Surname" },
+      { "field": "driverId", "type": "quantitative", "title": "DriverId" },
+      { "field": "circuitname", "type": "nominal", "title": "Circuit" },
+      { "field": "constructorName", "type": "nominal", "title": "Constructor" }
     ],
     "color": {
-      "field": "driver_name",
+      "field": "driverRef",
       "type": "nominal",
       "scale": {
         "scheme": "tableau20"
@@ -106,17 +107,19 @@
     "opacity": {
       "condition": [
         {
-          "param": "driver_legend",
+          "param": "highlight",
           "value": 1
         }
       ],
-      "value": 0.2
+      "value": 0.15
     },
-    "strokeWidth":{
-      "condition": {
-        "param": "highlight",
-        "value": 3
-      },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "highlight",
+          "value": 3
+        }
+      ],
       "value": 0
     }
   },

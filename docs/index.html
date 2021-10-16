@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Assignment 2</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
@@ -12,76 +12,118 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
   <script src="js/vega_lite_vis.js"></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Source+Sans+Pro&display=swap"
-    rel="stylesheet"> <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    rel="stylesheet" />
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
 </head>
 
 <body>
   <div class="center-container">
     <div class="grid">
       <div class="title">
-        <h1> FORMULA 1
+        <h1>
+          FORMULA 1
           <span class="vertical-line title-line-vertical"></span>
           <span class="horizontal-line title-line-horizontal"></span>
         </h1>
         <p class="subtitle">
-          <b style="font-size: 1.5rem;">Formula One</b> (also known as <b>Formula 1</b> or <b>F1</b>) is the highest
-          class of international auto racing for
-          single-seater formula racing car sanctioned by <i>Fédération Internationale de l'Automobile (FIA)</i>.
-          The World Drivers' Championship, which became the FIA Formula One World Championship in 1981,
-          has been one of the premier forms of racing around the world since its inaugural season in 1950.
+          <b class="white">Formula One </b> (also known as
+          <b class="white">Formula 1</b> or <b class="white">F1</b>) is the
+          highest class of international auto racing for single-seater formula
+          racing car sanctioned by
+          <b class="white"><i>Fédération Internationale de l'Automobile (FIA)</i></b>. The World Drivers' Championship,
+          which became the
+          <b class="white"> FIA Formula One World Championship in 1981</b>,
+          has been one of the premier forms of racing around the world since
+          its inaugural season in 1950.
         </p>
       </div>
       <div class="map">
-        <h2 class="map-title">
-          F1 Circuits around the globe
-        </h2>
-        <div id="F1map"></div>
+        <h2 class="map-title white">F1 Circuits around the globe</h2>
+        <div id="F1map" class="white"></div>
       </div>
 
       <div class="text1">
-        <h2 class="text1-title">
-          F1 Constructor of Each Nation
-        </h2>
+        <h2 class="text1-title white">F1 Constructor of Each Nation</h2>
         <div class="text1-content grey">
-          <b class="british">British</b> has the most of constructor team participate in Formula 1 out of a total of <b class="white">211</b> constructor team,
-           where there are 86 teams originated from British including some famous
-          team such as <b class="orange">McLaren</b>, <b class="lightblue">Williams</b>, <b class="lightgreen">Aston Martin</b>  and more. 
+          There are a total of <b class="white"> 211 </b>constructor teams
+          participated in Formula One since <b class="white">1950</b>.
+          <div>
+            In <b class="white">2021</b>, there are <b class="white">10</b> constructor team in
+            <b class="white">Formula One</b>.
+            <ul>
+              <li>
+                <b class="white">3 British</b> team,
+                <b class="orange">McLaren</b>,
+                <b class="lightblue">Williams</b>,
+                <b class="lightgreen">Aston Martin</b>
+              </li>
+              <li>
+                <b class="white">2 Italian</b> team,
+                <b class="alphatauri"> AlphaTauri</b>,
+                <b class="ferrari">Ferrari</b>
+              </li>
+              <li>
+                <b class="white">1 American</b> team,
+                <b class="haas"> Haas F1 Team</b>
+              </li>
+              <li>
+                <b class="white">1 Swiss</b> team,
+                <b class="alfaromeo">Alfa Romeo</b>
+              </li>
+              <li>
+                <b class="white">1 German</b> team,
+                <b class="teal">Mercedes</b>
+              </li>
+              <li>
+                <b class="white">1 French</b> team,
+                <b class="alphine">Alphine F1 Team</b>
+              </li>
+              <li>
+                <b class="white">1 Austrian</b> team,
+                <b class="redbull">Red Bull </b>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="chart1">
-
         <div id="F1constructor"></div>
       </div>
 
-      <div class="chart2">
+      <div class="chart2 white">
         <div id="F1constructorchampion"></div>
       </div>
       <div class="text2">
-        <h2 class="text2-title">
-          Constructor Ranking (1960-2020)
-        </h2>
+        <h2 class="text2-title white">Constructor Ranking (1960-2020)</h2>
         <div class="text2-content grey">
-          Since <b class="teal">Mercedes</b> returning as the frontline F1 constructor in 2010, 
-          they have been the most dominating team of modern Formula 1. 
-          <b class="blue">Red Bull's</b> arrival into Formula 1 in 2005 have some consecutive wins from 2010-2013,
-          since then they have been fighting to hold their ground amongst the top teams. Up until now, <b class="blue">Red Bull</b> is one of the strongest
-          constructor rival of <b class="teal">Mercedes</b>.
+          Since <b class="teal">Mercedes</b><b class="white"> return</b> as the frontline F1
+          constructor in <b class="white">2010</b>, they have been the <b class="white">most dominating team </b>
+          of modern Formula 1. <b class="blue">Red Bull's</b> arrival into
+          Formula 1 in <b class="white">2005</b> have some <b class="white">consecutive wins</b> from
+          <b class="white">2010 - 2013</b>, since then they have been fighting to hold their
+          ground amongst the top teams. In <b class="white">2021</b>, <b class="blue">Red Bull</b> is one of the
+          strongest constructor rival of <b class="teal">Mercedes</b>.
         </div>
       </div>
 
-
       <div class="text3">
-        <h2 class="text3-title">
-          F1 Driver of Each Nation
-        </h2>
+        <h2 class="text3-title white">F1 Driver of Each Nation</h2>
         <div class="text3-content grey">
-          There are a total of 853 drivers had participate in Formula 1 since 1950. 
-          Some of the famous drivers are Michael Schumacher, Lewis Hamilton, Sebastian Vettel
-          Alain Prost and Ayrton Senna.
+          There are a total of <b class="white"> 853 drivers</b> had
+          participate in Formula One since <b class="white"><i>1950</i></b>. There are
+          total 165 British drivers participated in Formula One.
+          <b class="teal">Lewis Hamilton</b>, is one of the most iconica British racing driver with
+          <b class="white">7 Formula One World Champion title</b>. He entered
+          Formula One in <b class="white">2007</b> with
+          <b class="orange">McLaren</b>, where he won 21 Grand Prix, before
+          moving to <b class="teal">Mercedes</b> in
+          <b class="white">2013</b> where, to 2020, he has won 74 races, with
+          <b class="white"> total of 95 wins </b>as a record for the<b class="white">
+            most Grand Prix victories in Formula One</b>.
         </div>
       </div>
       <div class="chart3">
@@ -89,28 +131,35 @@
       </div>
 
       <div class="text4">
-        <h2 class="text4-title">
-            Top 10 Driver (1960-2020)
-        </h2>
+        <h2 class="text4-title white">Top 10 Driver (1960-2020)</h2>
         <div class="text4-content grey">
-          This visualisation shows the top 10 driver for each race per year. 
-          One of the greatest driver of all time, <b class="teal">Lewis Hamilton</b>, 
-          is a British racing driver with <b class="white">7 Formula One
-          World Champion title</b>. He entered Formula One in <b class="white">2007</b> with 
-          <b class="orange">McLaren</b>,
-          where he won 21 Grand Prix, before moving to <b class="teal">Mercedes</b> in <b class="white">2013</b> where,
-          to 2020, he has won 74 races, with <b class="white"> total of 95 wins </b>as a record for 
-          the<b class="white"> most Grand Prix victories in Formula One</b> .
+          This visualisation shows <b class="white">driver in top 10 position </b>for each race by year.
+          Some of the greatest drivers in Formula One history are <b class="red">Michael Schumacher</b>
+          , <b class="teal">Lewis Hamilton</b>.
+          <div>
+            <ul>
+              <li>
+                <b class="red">Michael Schumacher</b> has won total of<b class="white">
+                  7<i> Formula One World Drivers' Championship</i></b>
+                title during
+                <b class="white"> 1994, 1995, 2000, 2001, 2002, 2003, 2004</b>.
+              </li>
+              <li>
+                <b class="teal">Lewis Hamilton</b> tied this record with a
+                total of<b class="white"><i> 7 Formula One World Drivers' Championship</i></b>
+                title won during
+                <b class="white">2008, 2014, 2015, 2017, 2018, 2019, 2020</b>.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="chart4">
+      <div class="chart4 white">
         <div id="F1driverchampion"></div>
       </div>
     </div>
   </div>
-  <footer>
-
-  </footer>
+  <footer></footer>
 </body>
 
 </html>

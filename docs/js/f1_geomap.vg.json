@@ -19,25 +19,37 @@
   },
   "background": "#413e3e",
   "projection": {
-    "type": "equalEarth"
+    "type": "equalEarth",
+    "center": { "expr": "zoomTo" },
+    "scale": { "expr": "zoom_level" }
   },
   "params": [
     {
-      "name": "Continent_selection",
+      "name": "zoomTo",
       "bind": {
         "input": "select",
-        "options": [null, "America", "Europe", "Africa", "Asia", "Oceania"],
-        "labels": [
-          "Show All",
-          "America",
-          "Europe",
-          "Africa",
-          "Asia",
-          "Oceania"
+        "options": [
+          [0, 0],
+          [-90, 10],
+          [0, 47],
+          [3.37, -5],
+          [90, 20],
+          [150, -30]
         ],
-        "name": "Continent Selection: "
+        "labels": ["Global", "America", "Europe", "Africa", "Asia", "Oceania"],
+        "name": "Zoom To: "
       }
-      
+    },
+    {
+      "name": "zoom_level",
+      "value": 200,
+      "bind": {
+        "input": "range",
+        "min": 200,
+        "max": 1000,
+        "step": 10,
+        "name": "Zoom Level: "
+      }
     }
   ],
   "layer": [
@@ -53,24 +65,45 @@
       "params": [
         {
           "name": "highlight",
-          "select": {"type": "point", "on": "mouseover"}
+          "select": { "type": "point", "on": "mouseover" }
+        },
+        {
+          "name": "continent_highlight",
+          "select": {
+            "type": "point",
+            "fields": ["properties.REGION_UN"],
+            "on": "mouseover"
+          }
         }
       ],
       "mark": {
         "type": "geoshape",
-        "fill": "#6b6a6a",
-        "stroke": "#a7a5a5"
+        "fill": "#e924248a",
+        "stroke": "#9b9b9b"
       },
       "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.NAME",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
+            "field": "properties.REGION_UN",
+            "type": "nominal",
+            "title": "Continent"
+          }
+        ],
+
         "strokeWidth": {
           "condition": [
             {
-              "param": "highlight",
+              "param": "continent_highlight",
               "empty": false,
               "value": 3
             }
           ],
-          "value": 0.5
+          "value": 1
         }
       }
     },
@@ -81,18 +114,18 @@
       "name": "point",
       "mark": {
         "type": "circle",
-        "stroke": "#ffffff"
+        "stroke": "#d8d8d8",
+        "size": 50
       },
-      "transform": [
-        {
-          "filter": "Continent_selection == null || datum.continent == Continent_selection"
-        }
-      ],
+
       "params": [
         {
-          "name": "continent_select",
-          "select": { "type":"point", "fields": ["continent"]},
-          "bind": "legend"
+          "name": "circuit_highlight",
+          "select": {
+            "type": "point",
+            "fields": ["continent"],
+            "on": "mouseover"
+          }
         }
       ],
       "encoding": {
@@ -104,24 +137,22 @@
           "field": "lat",
           "type": "quantitative"
         },
-        "size": {
-          "value": 30
-        },
+
         "color": {
           "field": "continent",
           "type": "nominal",
           "scale": {
-            "range": ["#9b5de5","#f15bb5","#fee440","#00bbf9","#00f5d4"]
+            "range": ["#ac68ff", "#505bff", "#fee440", "#00bbf9", "#00f5d4"]
           },
           "title": "Continent"
         },
-        "strokeWidth":{
-          "value": 1
+        "strokeWidth": {
+          "value": 2
         },
         "opacity": {
           "condition": [
             {
-              "param": "continent_select",
+              "param": "circuit_highlight",
               "value": 1
             }
           ],
@@ -145,7 +176,6 @@
           }
         ]
       }
-      
     }
   ]
 }

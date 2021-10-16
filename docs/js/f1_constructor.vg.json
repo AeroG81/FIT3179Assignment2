@@ -30,7 +30,7 @@
   "vconcat": [
     {
       "width": 700,
-      "height": 200,
+      "height": 250,
       "encoding": {
         "x": { "field": "nationality", "sort": "-y", "title": "Nationality" },
         "y": { "aggregate": "count", "title": "Number of Constructors" },

@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart",
-  "width": 544,
+  "width": 530,
   "height": 400,
-  "background": "#413e3e",
+  "background": "#585353",
   "config": {
     "title": {
       "color": "#ffffff"
@@ -11,12 +11,24 @@
     "legend": {
       "titleColor": "#ffffff",
       "labelColor": "#ffffff",
-      "labelFont": "Source Sans Pro"
+      "labelFont": "Source Sans Pro",
+      "labelFontSize": 15,
+      "titleFontSize": 18,
+      "labelFontStyle": "bold"
     },
     "axis": {
       "titleColor": "#ffffff",
       "labelColor": "#ffffff",
-      "gridColor": "#525252"
+      "gridColor": "#525252",
+      "labelFontSize": 13,
+      "titleFontSize": 18,
+      "labelFontStyle": "bold",
+      "labelPadding":10
+    },
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
     }
   },
   "data": {

@@ -1,7 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#413e3e",
-  "data": { "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/constructors.csv" },
+  "background": "#585353",
+  "data": {
+    "url": "https://raw.githubusercontent.com/AeroG81/FIT3179Assignment2/main/Dataset/constructors.csv"
+  },
   "config": {
     "title": {
       "color": "#ffffff"
@@ -16,7 +18,9 @@
       "labelColor": "#ffffff",
       "gridColor": "#7a7a7a",
       "labelFontSize": 13,
-      "labelAngle": -45
+      "labelAngle": -45,
+      "titleFontSize": 18,
+      "labelFontStyle": "bold"
     },
     "scale": {
       "pointPadding": 0
@@ -33,7 +37,13 @@
       "height": 250,
       "encoding": {
         "x": { "field": "nationality", "sort": "-y", "title": "Nationality" },
-        "y": { "aggregate": "count", "title": "Number of Constructors" },
+        "y": {
+          "aggregate": "count",
+          "title": "Number of Constructors",
+          "axis": {
+            "labelAngle": 0
+          }
+        },
         "tooltip": [
           {
             "aggregate": "count",
@@ -65,15 +75,16 @@
             }
           ],
           "encoding": {
-            "color":{
+            "color": {
               "value": "#e44242"
             },
-            "opacity":{
-              "condition": [{
-                "param": "constructor_hover", 
-                "value": 1
-              }
-            ],
+            "opacity": {
+              "condition": [
+                {
+                  "param": "constructor_hover",
+                  "value": 1
+                }
+              ],
               "value": 0.3
             }
           }
@@ -93,13 +104,13 @@
       ]
     },
     {
-      "width":  680,
+      "width": 680,
       "height": 250,
       "transform": [
         { "calculate": "ceil (datum.count/10)", "as": "col" },
         { "calculate": "datum.count - datum.col*10", "as": "row" }
       ],
-      "mark": { "type": "point", "filled": true }, 
+      "mark": { "type": "point", "filled": true },
       "params": [
         {
           "name": "constructor_hover",
@@ -116,8 +127,16 @@
         "tooltip": [
           { "field": "nationality", "type": "nominal", "title": "Nationality" },
           { "field": "name", "type": "nominal", "title": "Constructor name" },
-          { "field": "constructorRef", "type": "nominal", "title": "Constructor Ref" },
-          { "field": "constructorId", "type": "nominal", "title": "Constructor ID" }
+          {
+            "field": "constructorRef",
+            "type": "nominal",
+            "title": "Constructor Ref"
+          },
+          {
+            "field": "constructorId",
+            "type": "nominal",
+            "title": "Constructor ID"
+          }
         ],
         "shape": {
           "value": "M1.7 -1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"
@@ -126,12 +145,13 @@
           "condition": { "param": "nation", "value": "#e44242" },
           "value": "rgb(167,165,156)"
         },
-        "opacity":{
-          "condition": [{
-            "param": "nation_hover", 
-            "value": 1
-          }
-        ],
+        "opacity": {
+          "condition": [
+            {
+              "param": "nation_hover",
+              "value": 1
+            }
+          ],
           "value": 0.3
         },
         "size": { "value": 170 }

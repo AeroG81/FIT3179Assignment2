@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart",
-  "width": 544,
-  "height": 400,
-  "background": "#413e3e",
+  "width": 530,
+  "height": 500,
+  "background": "#585353",
   "config": {
     "title": {
       "color": "#ffffff"
@@ -11,12 +11,19 @@
     "legend": {
       "titleColor": "#ffffff",
       "labelColor": "#ffffff",
-      "labelFont": "Source Sans Pro"
+      "labelFont": "Source Sans Pro",
+      "labelFontSize": 15,
+      "titleFontSize": 18,
+      "labelFontStyle": "bold"
     },
     "axis": {
       "titleColor": "#ffffff",
       "labelColor": "#ffffff",
-      "gridColor": "#7a7a7a"
+      "gridColor": "#525252",
+      "labelFontSize": 13,
+      "titleFontSize": 18,
+      "labelFontStyle": "bold",
+      "labelPadding":10
     },
     "style": {
       "cell": {
@@ -90,11 +97,12 @@
       "title": "Position"
     },
     "tooltip": [
+      { "field": "driverId", "type": "quantitative", "title": "DriverId" },
       { "field": "forename", "type": "nominal", "title": "Forename" },
       { "field": "surname", "type": "nominal", "title": "Surname" },
-      { "field": "driverId", "type": "quantitative", "title": "DriverId" },
+      { "field": "constructorName", "type": "nominal", "title": "Team" },
       { "field": "circuitname", "type": "nominal", "title": "Circuit" },
-      { "field": "constructorName", "type": "nominal", "title": "Constructor" }
+      { "field": "date", "type": "nominal", "title": "Race Date" }
     ],
     "color": {
       "field": "driverRef",

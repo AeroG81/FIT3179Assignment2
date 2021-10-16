@@ -9,7 +9,10 @@
     "legend": {
       "titleColor": "#ffffff",
       "labelColor": "#ffffff",
-      "labelFont": "Source Sans Pro"
+      "labelFont": "Source Sans Pro",
+      "labelFontSize": 15,
+      "titleFontSize": 18,
+      "labelFontStyle": "bold"
     },
     "style": {
       "cell": {
@@ -17,7 +20,7 @@
       }
     }
   },
-  "background": "#413e3e",
+  "background": "#585353",
   "projection": {
     "type": "equalEarth",
     "center": { "expr": "zoomTo" },
@@ -78,7 +81,7 @@
       ],
       "mark": {
         "type": "geoshape",
-        "fill": "#e924248a",
+        "fill": "#8d000069",
         "stroke": "#9b9b9b"
       },
       "encoding": {

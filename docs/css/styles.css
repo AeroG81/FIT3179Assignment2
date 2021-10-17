@@ -92,7 +92,7 @@ body {
 .grid {
     max-width: 1400px;
     min-height: 110vh;
-    padding: 65px;
+    padding: 65px; 
     background-color: #585353;
     display: grid;
     grid-template-columns: 50% 50%;

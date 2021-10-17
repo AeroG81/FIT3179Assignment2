@@ -179,7 +179,7 @@ body {
 
 .text1-content {
     position: absolute;
-    top: 90px;
+    top: 95px;
     left: 1px;
     width: 650px;
     font-size: 2rem;
@@ -209,7 +209,7 @@ body {
     width: 650px;
     text-align: left;
     font-size: 2rem;
-    line-height: 3.3rem;
+    line-height: 3.5rem;
 }
 
 .chart2 {
@@ -231,11 +231,11 @@ body {
 
 .text3-content {
     position: absolute;
-    top: 90px;
+    top: 95px;
     left: 1px;
     width: 650px;
     font-size: 2rem;
-    line-height: 3.3rem;
+    line-height: 3.8rem;
 }
 
 .chart3 {
@@ -256,12 +256,12 @@ body {
 
 .text4-content {
     position: absolute;
-    top: 90px;
+    top: 100px;
     right: 0;
     width: 650px;
     text-align: left;
     font-size: 2rem;
-    line-height: 2.5rem;
+    line-height: 3rem;
 }
 
 .chart4 {
